@@ -1,0 +1,25 @@
+
+Browser->+Server: HTTP GET request /notes
+Server-->-Browser: return /notes html document
+
+note over  Browser: Browser starts formatting html document requests other files mentioned in head
+
+Browser->+Server: HTTP GET request main.css
+Server-->-Browser: return main.css 
+
+Browser->+Server: HTTP GET request main.js
+Server-->-Browser: return main.js 
+
+note over Browser: Browser request data.json required by main.js
+
+Browser->+Server: HTTP GET request data.json
+Server-->-Browser: return data.json
+
+Browser->+Server: HTTP GET request favicon.ico
+Server-->-Browser: return favicon.ico 
+
+note over Browser:Browser sends HTTP POST request to server for adding new note to /notes this causes state change and invokes readystatechange function that add new note to notes array
+
+Browser->+Server: HTTP POST request exampleapp/new_note
+Server-->-Browser: return favicon.ico 
+
